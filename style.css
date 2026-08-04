@@ -9,35 +9,34 @@
 /* Body */
 
 body {
-    background-color: #1e1e2f;
-
+    background-color: #111827;
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-height: 100vh;
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background-color: #0f172a;
-}
+/* Calculator */
 
 .calculator {
-    background-color: #334155;
+    width: 380px;
+    background-color: #1f2937;
     padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* Heading */
+
 .calculator h1 {
-    color: #ffffff;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
 }
+
+/* Display */
 
 .display {
     margin-bottom: 20px;
@@ -45,15 +44,18 @@ body {
 
 #display {
     width: 100%;
+    height: 80px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
     padding: 15px;
+    background-color: #0f172a;
+    color: white;
     font-size: 2rem;
     text-align: right;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    background-color: #1a1a2e;
-    color: #ffffff;
 }
+
+/* Button Layout */
 
 .buttons {
     display: grid;
@@ -61,26 +63,73 @@ body {
     gap: 10px;
 }
 
+/* All Buttons */
+
 .buttons button {
-    padding: 18px;
-    font-size: 1.2rem;
+    height: 60px;
     border: none;
-    border-radius: 10px;
-    background-color: #5e5e90;
-    color: #ffffff;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.2s;
 }
 
-.buttons button:hover {
-    background-color: #5a5a7a;
+/* Number Buttons */
+
+.buttons button:not(.function):not(.operator):not(.equal) {
+    background-color: #4b5563;
 }
+
+.buttons button:not(.function):not(.operator):not(.equal):hover {
+    background-color: #5b6676;
+}
+
+/* AC DEL % */
+
+.function {
+    background-color: #6b7280;
+}
+
+.function:hover {
+    background-color: #7c8594;
+}
+
+/* Operators */
+
+.operator {
+    background-color: #8b6b4d;
+}
+
+.operator:hover {
+    background-color: #9b7b5d;
+}
+
+/* Equal */
+
+.equal {
+    background-color: #3f6d64;
+}
+
+.equal:hover {
+    background-color: #4c8177;
+}
+
+/* Click Effect */
 
 .buttons button:active {
     transform: scale(0.96);
 }
 
-@media (max-width: 480px) {
+/* Zero Button */
+
+.zero {
+    grid-column: span 2;
+}
+
+/* Responsive */
+
+@media (max-width:480px) {
 
     .calculator {
         width: 95%;
@@ -88,7 +137,7 @@ body {
     }
 
     .buttons button {
-        padding: 15px;
+        height: 55px;
         font-size: 1rem;
     }
 
