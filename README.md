@@ -4,20 +4,17 @@ A modern and responsive calculator built using **HTML**, **CSS**, and **JavaScri
 
 ## 🚀 Features
 
-- ➕ Addition
-- ➖ Subtraction
-- ✖️ Multiplication
-- ➗ Division
-- 🔢 Decimal calculations
-- 🗑️ Clear (AC)
-- ⌫ Delete (DEL)
-- 📱 Responsive Design
+- Basic arithmetic operations (+, −, ×, ÷)
+- Responsive design
+- Modern user interface
+- Easy-to-use button layout
+- Clean and organized code structure
 
 ## 🛠️ Technologies Used
 
 - HTML5
 - CSS3
-- JavaScript (DOM)
+- JavaScript
 
 ## 📂 Project Structure
 
@@ -31,27 +28,19 @@ calculator-project/
 
 ## ▶️ How to Run
 
-1. Download or clone the repository.
+1. Clone or download this repository.
 2. Open the project folder.
-3. Double-click `index.html` or open it in your browser.
+3. Open `index.html` in your web browser.
 
 ## 🎯 Learning Objectives
 
-This project helped me understand:
+This project helped me practice:
 
-- HTML page structure
-- CSS styling and layouts
+- HTML structure
+- CSS styling
 - JavaScript DOM manipulation
 - Event handling
-- Calculator logic
 - Responsive web design
-
-## 📌 Future Improvements
-
-- Keyboard support
-- Scientific calculator functions
-- Theme switch (Dark/Light Mode)
-- Calculation history
 
 ## 👨‍💻 Author
 
@@ -59,7 +48,3 @@ This project helped me understand:
 
 GitHub:  
 https://github.com/yuvashreedhanasekaren-coder
-
----
-
-⭐ If you found this project useful, consider giving it a Star!
