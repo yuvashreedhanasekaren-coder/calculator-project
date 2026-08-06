@@ -10,9 +10,17 @@ const numberButtons = document.querySelectorAll(".buttons button:not(.function):
 
 const operatorButtons = document.querySelectorAll(".operator");
 
+// Equal Button
+
+const equalButton = document.querySelector(".equal");
+
 // Current Input
 
 let currentInput = "";
+let firstNumber = "";
+let secondNumber = "";
+let currentOperator = "";
+
 
 // Number Click
 
@@ -42,6 +50,8 @@ operatorButtons.forEach(function (button) {
 
         const operator = button.textContent;
 
+        currentOperator = operator;
+
         if (currentInput === "") {
             return;
         }
@@ -49,19 +59,71 @@ operatorButtons.forEach(function (button) {
         const lastCharacter = currentInput.slice(-1);
 
         if (
-    lastCharacter === "+" ||
-    lastCharacter === "-" ||
-    lastCharacter === "×" ||
-    lastCharacter === "÷"
-) {
+            lastCharacter === "+" ||
+            lastCharacter === "-" ||
+            lastCharacter === "×" ||
+            lastCharacter === "÷"
+        ) {
+            currentInput = currentInput.slice(0, -1);
+        }
 
-    currentInput = currentInput.slice(0, -1);
-
-}
         currentInput += operator;
 
         display.value = currentInput;
 
     });
+
+});
+
+// Equal Click
+
+equalButton.addEventListener("click", function () {
+
+    const numbers = currentInput.split(currentOperator);
+
+    firstNumber = numbers[0];
+    secondNumber = numbers[1];
+
+    console.log(firstNumber);
+    console.log(secondNumber);
+
+});
+
+// Equal Click
+
+equalButton.addEventListener("click", function () {
+
+    const numbers = currentInput.split(currentOperator);
+
+    firstNumber = Number(numbers[0]);
+    secondNumber = Number(numbers[1]);
+
+    let result;
+
+    switch (currentOperator) {
+
+        case "+":
+            result = firstNumber + secondNumber;
+            break;
+
+        case "-":
+            result = firstNumber - secondNumber;
+            break;
+
+        case "×":
+            result = firstNumber * secondNumber;
+            break;
+
+        case "÷":
+            result = firstNumber / secondNumber;
+            break;
+
+        default:
+            return;
+
+    }
+
+    currentInput = result.toString();
+    display.value = currentInput;
 
 });
