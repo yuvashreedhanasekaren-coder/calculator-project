@@ -4,7 +4,9 @@ const display = document.querySelector("#display");
 
 // Number Buttons
 
-const numberButtons = document.querySelectorAll(".buttons button:not(.function):not(.operator):not(.equal)");
+const numberButtons = document.querySelectorAll(
+    ".buttons button:not(.function):not(.operator):not(.equal)"
+);
 
 // Operator Buttons
 
@@ -14,6 +16,14 @@ const operatorButtons = document.querySelectorAll(".operator");
 
 const equalButton = document.querySelector(".equal");
 
+// Clear Button
+
+const clearButton = document.querySelector(".function");
+
+// Delete Button
+
+const deleteButton = document.querySelectorAll(".function")[1];
+
 // Current Input
 
 let currentInput = "";
@@ -22,7 +32,7 @@ let secondNumber = "";
 let currentOperator = "";
 
 
-// Number Click
+// Numbers
 
 numberButtons.forEach(function (button) {
 
@@ -42,7 +52,8 @@ numberButtons.forEach(function (button) {
 
 });
 
-// Operator Click
+
+// Operators
 
 operatorButtons.forEach(function (button) {
 
@@ -75,21 +86,8 @@ operatorButtons.forEach(function (button) {
 
 });
 
-// Equal Click
 
-equalButton.addEventListener("click", function () {
-
-    const numbers = currentInput.split(currentOperator);
-
-    firstNumber = numbers[0];
-    secondNumber = numbers[1];
-
-    console.log(firstNumber);
-    console.log(secondNumber);
-
-});
-
-// Equal Click
+// Equal Button
 
 equalButton.addEventListener("click", function () {
 
@@ -124,6 +122,38 @@ equalButton.addEventListener("click", function () {
     }
 
     currentInput = result.toString();
+
+    display.value = currentInput;
+
+});
+
+
+// Clear Button
+
+function clearDisplay() {
+
+    currentInput = "";
+    firstNumber = "";
+    secondNumber = "";
+    currentOperator = "";
+
+    display.value = "0";
+
+}
+
+clearButton.addEventListener("click", clearDisplay);
+
+
+// Delete Button
+
+deleteButton.addEventListener("click", function () {
+
+    currentInput = currentInput.slice(0, -1);
+
+    if (currentInput === "") {
+        currentInput = "0";
+    }
+
     display.value = currentInput;
 
 });
