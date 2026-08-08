@@ -31,7 +31,6 @@ let firstNumber = "";
 let secondNumber = "";
 let currentOperator = "";
 
-
 // Numbers
 
 numberButtons.forEach(function (button) {
@@ -51,7 +50,6 @@ numberButtons.forEach(function (button) {
     });
 
 });
-
 
 // Operators
 
@@ -85,7 +83,6 @@ operatorButtons.forEach(function (button) {
     });
 
 });
-
 
 // Equal Button
 
@@ -127,7 +124,6 @@ equalButton.addEventListener("click", function () {
 
 });
 
-
 // Clear Button
 
 function clearDisplay() {
@@ -143,7 +139,6 @@ function clearDisplay() {
 
 clearButton.addEventListener("click", clearDisplay);
 
-
 // Delete Button
 
 deleteButton.addEventListener("click", function () {
@@ -157,3 +152,21 @@ deleteButton.addEventListener("click", function () {
     display.value = currentInput;
 
 });
+
+// Percentage Button
+
+const percentageButton = document.querySelectorAll(".function")[2];
+
+function calculatePercentage() {
+
+if (currentInput === "" || currentInput === "0") {
+    return;
+}
+
+currentInput = (Number(currentInput) / 100).toString();
+
+display.value = currentInput;
+
+}
+
+percentageButton.addEventListener("click", calculatePercentage);
